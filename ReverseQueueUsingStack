@@ -1,0 +1,37 @@
+/*   Queue’yu Stack ile ters çevirme
+1️⃣ Kuyruktaki tüm elemanları sırayla dequeue() edip stack’e push() et.
+Stack’e atınca sıra otomatik tersine döner.
+2️⃣ Stack’teki tüm elemanları pop() edip tekrar kuyruğa enqueue() et.
+Böylece kuyruk artık ters sırada olur.
+*/
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+
+public class ReverseQueueUsingStack {
+Stack<Integer> stack=new Stack<>();
+
+        // 1. Tüm elemanları Queue'dan Stack'e aktar
+while(!queue.isEmpty()){
+stack.push(queue.remove());
+}
+
+// 2. Şimdi Stack'teki tüm elemanları geri Queue'ya aktar
+while(!stack.isEmpty()){
+queue.add(stack.pop());
+}
+}
+
+ public static void main(String[] args) {
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(10);
+        queue.add(20);
+        queue.add(30);
+        queue.add(40);
+
+        System.out.println("Orijinal Kuyruk: " + queue);
+        reverseQueue(queue);
+        System.out.println("Tersine Çevrilmiş Kuyruk: " + queue);
+    }
+}
